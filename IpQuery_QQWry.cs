@@ -31,12 +31,11 @@ namespace IpQuery_QQWry {
 					_pos += 4;
 					byte _mode = m_bytes [_pos];
 					if (_mode == 0x01) {
-						if (m_bytes [read_item<uint> (_pos + 1) & 0xffffff] == 0x02) {
-							uint _main_offset = read_item<uint> (_pos + 1) & 0xffffff;
+						uint _main_offset = read_item<uint> (_pos + 1) & 0xffffff;
+						if (m_bytes [_main_offset] == 0x02) {
 							return read_infos (_main_offset, _pos + 8);
 						} else {
-							_pos = read_item<uint> (_pos + 1) & 0xffffff;
-							return read_infos (_pos);
+							return read_infos (_main_offset);
 						}
 					} else if (_mode == 0x02) {
 						uint _main_offset = read_item<uint> (_pos + 1) & 0xffffff;
