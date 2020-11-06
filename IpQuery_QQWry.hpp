@@ -13,6 +13,8 @@ public:
 	IpQuery_QQWry (std::string _file) {
 		std::ifstream ifs (_file);
 		m_bytes = std::string ((std::istreambuf_iterator<char> (ifs)), std::istreambuf_iterator<char> ());
+		m_index_head = read_item_uint32 (0);
+		m_index_tail = read_item_uint32 (4);
 	}
 
 	std::tuple<std::string, std::string> find_info (std::string _ip) {

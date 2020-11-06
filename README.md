@@ -1,10 +1,11 @@
 # IpQuery_QQWry
 
-*因有更准确的开源库[ip2region](https://github.com/lionsoul2014/ip2region)，纯真IP数据库查询不再被建议使用。*
-
 纯真IP数据库查询（C++、C#）
 
-数据库文件 `qqwry.dat` 下载地址：[qqwry.dat](https://github.com/WisdomFusion/qqwry.dat)
+数据库仓库：
+
+- [out0fmemory/qqwry.dat](https://github.com/out0fmemory/qqwry.dat)：每天更新，仓库很大
+- [WisdomFusion/qqwry.dat](https://github.com/WisdomFusion/qqwry.dat)：更新较慢，仓库较小，下载方便
 
 ## C++
 
@@ -36,6 +37,10 @@ Console.WriteLine (_info1);
 Console.WriteLine (_info2);
 ```
 
+## 其他推荐
+
+[ip2region](https://github.com/lionsoul2014/ip2region)
+
 ## 开源协议
 
-跟随 qqwry.dat 项目
+MIT
