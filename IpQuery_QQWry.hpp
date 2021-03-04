@@ -17,7 +17,12 @@ class IpQuery_QQWry {
 public:
 	IpQuery_QQWry (std::string _file) {
 		std::ifstream ifs (_file, std::ios::binary);
-		m_bytes = std::string ((std::istreambuf_iterator<char> (ifs)), std::istreambuf_iterator<char> ());
+		//m_bytes = std::string ((std::istreambuf_iterator<char> (ifs)), std::istreambuf_iterator<char> ()); // low performance
+		ifs.seekg (0, std::ios::end);
+		size_t _fsz = (size_t) ifs.tellg ();
+		ifs.seekg (0, std::ios::beg);
+		m_bytes.resize (_fsz);
+		ifs.read (&m_bytes [0], (std::streamsize) _fsz);
 		m_index_head = read_item_uint32 (0);
 		m_index_tail = read_item_uint32 (4);
 	}
