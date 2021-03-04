@@ -15,9 +15,10 @@
 
 ```cpp
 IpQuery_QQWry _ip_query ("qqwry.dat");
-auto [_info1, _info2] = _ip_query.find_info ("8.8.8.8");
-std::cout << _info1 << std::endl;
-std::cout << _info2 << std::endl;
+auto [_info0, _info1, _desp] = _ip_query.find_info ("8.8.8.8");
+std::cout << "info0[" << _info0 << "]\n";
+std::cout << "info1[" << _info1 << "]\n";
+std::cout << "_desp[" << _desp << "]\n";
 ```
 
 ## C\#
@@ -32,9 +33,10 @@ std::cout << _info2 << std::endl;
 
 ```csharp
 IpQuery_QQWry _ip_query = new IpQuery_QQWry ("qqwry.dat");
-var (_info1, _info2) = _ip_query.find_info ("8.8.8.8");
-Console.WriteLine (_info1);
-Console.WriteLine (_info2);
+var (_info0, _info1, _desp) = _ip_query.find_info ("8.8.8.8");
+Console.WriteLine ($"info0[{_info0}]");
+Console.WriteLine ($"info1[{_info1}]");
+Console.WriteLine ($"desp[{_desp}]");
 ```
 
 ## 其他推荐
