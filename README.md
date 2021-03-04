@@ -39,9 +39,10 @@ Console.WriteLine ($"info1[{_info1}]");
 Console.WriteLine ($"desp[{_desp}]");
 ```
 
-## 其他推荐
+## 相关链接
 
-[ip2region](https://github.com/lionsoul2014/ip2region)
+- [纯真网络](https://www.cz88.net/)
+- [ip2region](https://github.com/lionsoul2014/ip2region)
 
 ## 开源协议
 

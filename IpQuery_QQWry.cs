@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace ConsoleApp1 {
+namespace IpQuery_QQWry {
 	public class IpQuery_QQWry {
 		public IpQuery_QQWry (string _file) {
 			m_bytes = File.ReadAllBytes (_file);
