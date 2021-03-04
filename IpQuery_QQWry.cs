@@ -47,7 +47,7 @@ namespace ConsoleApp1 {
 						_desp = read_area (_pos + 8);
 					} else {
 						(_info0, _info1, _size) = read_infos (_pos);
-						_desp = read_area (_pos + _size + 5);
+						_desp = read_area (_pos + _size + 1);
 					}
 					return (_info0, _info1, _desp);
 				}

@@ -41,7 +41,7 @@ public:
 			} else {
 				_pos += 4;
 				uint8_t _mode = m_bytes [_pos];
-				std::string _info0, _info1, _desp;
+				std::string _info0, _info1, _desp = "";
 				if (_mode == 0x01) {
 					uint32_t _main_offset = read_item_uint24 (_pos + 1);
 					if (m_bytes [_main_offset] == 0x02) {
@@ -57,7 +57,7 @@ public:
 					_desp = read_area (_pos + 8);
 				} else {
 					std::tie (_info0, _info1) = read_infos (_pos);
-					_desp = read_area (_pos + (uint32_t) _info0.size () + 5);
+					_desp = read_area (_pos + (uint32_t) _info0.size () + 1);
 				}
 				return std::make_tuple (_info0, _info1, _desp);
 			}
