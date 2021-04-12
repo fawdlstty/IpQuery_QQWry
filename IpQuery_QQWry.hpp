@@ -27,9 +27,9 @@ public:
 		m_index_tail = read_item_uint32 (4);
 	}
 
-	IpQuery_QQWry (const uint8_t *_data, size_t _size) {
-		m_bytes.resize (_size);
-		memcpy (&m_bytes [0], _data, _size);
+	IpQuery_QQWry (std::tuple<uint8_t *, size_t> _data) {
+		m_bytes.resize (std::get<1> (_data));
+		memcpy (&m_bytes [0], std::get<0> (_data), std::get<1> (_data));
 		m_index_head = read_item_uint32 (0);
 		m_index_tail = read_item_uint32 (4);
 	}
