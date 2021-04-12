@@ -27,6 +27,13 @@ public:
 		m_index_tail = read_item_uint32 (4);
 	}
 
+	IpQuery_QQWry (const uint8_t *_data, size_t _size) {
+		m_bytes.resize (_size);
+		memcpy (&m_bytes [0], _data, _size);
+		m_index_head = read_item_uint32 (0);
+		m_index_tail = read_item_uint32 (4);
+	}
+
 	std::tuple<std::string, std::string, std::string> find_info (std::string _ip) {
 		uint32_t _ip0, _ip1, _ip2, _ip3;
 		sscanf_s (_ip.data (), "%u.%u.%u.%u", &_ip0, &_ip1, &_ip2, &_ip3);
@@ -59,7 +66,7 @@ public:
 				} else if (_mode == 0x02) {
 					uint32_t _main_offset = read_item_uint24 (_pos + 1);
 					std::tie (_info0, _info1) = read_infos (_main_offset, _pos + 4);
-					_desp = read_area (_pos + 8);
+					//_desp = read_area (_pos + 8);
 				} else {
 					std::tie (_info0, _info1) = read_infos (_pos);
 					_desp = read_area (_pos + (uint32_t) _info0.size () + 1);

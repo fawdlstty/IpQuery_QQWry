@@ -30,7 +30,7 @@ namespace IpQuery_QQWry {
 				} else {
 					_pos += 4;
 					byte _mode = m_bytes [_pos];
-					string _info0, _info1, _desp;
+					string _info0, _info1, _desp = "";
 					uint _size;
 					if (_mode == 0x01) {
 						uint _main_offset = read_item_uint24 (_pos + 1);
@@ -44,7 +44,7 @@ namespace IpQuery_QQWry {
 					} else if (_mode == 0x02) {
 						uint _main_offset = read_item_uint24 (_pos + 1);
 						(_info0, _info1, _) = read_infos (_main_offset, _pos + 4);
-						_desp = read_area (_pos + 8);
+						//_desp = read_area (_pos + 8);
 					} else {
 						(_info0, _info1, _size) = read_infos (_pos);
 						_desp = read_area (_pos + _size + 1);
